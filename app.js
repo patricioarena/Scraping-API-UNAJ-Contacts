@@ -18,7 +18,12 @@ function remove(array, element) {
     return array.filter(e => e !== element);
 }
 
+const escapeRegExp = (string) => {
+    return string.replace(/\n/g, ' ');
+  }
+  
 async function withPupperteer() {
+    const collection = [] ;
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     var URL = 'https://www.unaj.edu.ar/contacto/';
@@ -39,7 +44,15 @@ async function withPupperteer() {
         let element = table[index];
         table = remove(table, element);
     }
-    return table;
+
+    for (let index = 0; index < table.length; index += 2) {
+        let element = table[index];
+        let regExp = escapeRegExp(element.Sede);
+        if (regExp !== '') {
+            collection.push({property: regExp});
+        }
+    }
+    return collection;
 }
 
 app.get("/withPupperteer", function (req, res) {
@@ -47,12 +60,6 @@ app.get("/withPupperteer", function (req, res) {
         res.status(200).send(resultado);
     });
 });
-
-
-
-
-
-
 
 app.listen(port, host, () => {
     console.log(`Server running on => http://${host}:${port}`);
