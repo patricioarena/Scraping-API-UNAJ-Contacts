@@ -20,15 +20,15 @@ function remove(array, element) {
 
 const escapeRegExp = (string) => {
     return string.replace(/\n/g, ' ');
-  }
-  
+}
+
 async function withPupperteer() {
     const collection = [] ;
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
     var URL = 'https://www.unaj.edu.ar/contacto/';
     await page.goto(URL);
-    
+
     let table = await page.evaluate(() => {
 
         const Sedes = [
@@ -39,7 +39,7 @@ async function withPupperteer() {
     });
 
     await browser.close();
-    
+
     for (let index = 0; index < table.length; index += 2) {
         let element = table[index];
         table = remove(table, element);
@@ -65,7 +65,3 @@ app.listen(port, host, () => {
     console.log(`Server running on => http://${host}:${port}`);
     opn(`http://${host}:${port}` + '/withPupperteer', { app: 'opera' }); // Cambiar browser
 });
-
-
-
-
