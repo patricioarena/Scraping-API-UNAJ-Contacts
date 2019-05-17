@@ -23,7 +23,12 @@ const escapeRegExp = (string) => {
 
 async function withPupperteer() {
     const collection = [] ;
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+        'args' : [
+            '--no-sandbox',
+            '--disable-setuid-sandbox'
+        ]
+    });
     const page = await browser.newPage();
     var URL = 'https://www.unaj.edu.ar/contacto/';
     await page.goto(URL);
