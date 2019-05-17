@@ -1,7 +1,7 @@
 {
   "name": "scraping",
   "version": "1.0.0",
-  "description": "scraping with curl",
+  "description": "scraping with puppeteer",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -21,7 +21,6 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "opn": "^5.4.0",
     "puppeteer": "^1.11.0"
   }
 }

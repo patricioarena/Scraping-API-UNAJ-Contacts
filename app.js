@@ -1,12 +1,11 @@
-var host = '127.0.0.1';
-var port = 3000;
+const port = process.env.PORT || 3000
 
-var bodyParser = require('body-parser');
-var puppeteer = require('puppeteer');
-var express = require('express');
-var cors = require('cors');
-var opn = require('opn');
-var app = express();
+const bodyParser = require('body-parser');
+const puppeteer = require('puppeteer');
+const express = require('express');
+const cors = require('cors');
+// const opn = require('opn');
+const app = express();
 
 app.use(cors());
 app.options('*', cors());
@@ -61,7 +60,14 @@ app.get("/withPupperteer", function (req, res) {
     });
 });
 
-app.listen(port, host, () => {
+app.get("/", function (req, res) {
+    withPupperteer().then(function (resultado) {
+        res.status(200).send('<h1> Hello World </h1>');
+    });
+});
+
+app.listen(port, () => {
+    const host = '127.0.0.1';
     console.log(`Server running on => http://${host}:${port}`);
-    opn(`http://${host}:${port}` + '/withPupperteer', { app: 'opera' }); // Cambiar browser
+    // opn(`http://${host}:${port}` + '/withPupperteer', { app: 'opera' }); // Cambiar browser
 });
