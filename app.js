@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const puppeteer = require('puppeteer');
 const express = require('express');
 const cors = require('cors');
-const opn = require('opn');
+// const opn = require('opn');
 const app = express();
 
 app.use(cors());
@@ -72,7 +72,7 @@ app.get("/", function (req, res) {
 });
 
 app.listen(port, () => {
-    const host = '127.0.0.1';
-    console.log(`Server running on => http://${host}:${port}`);
-    opn(`http://${host}:${port}` + '/withPupperteer', { app: 'opera' }); // Cambiar browser
+    // const host = '127.0.0.1';
+    // console.log(`Server running on => http://${host}:${port}`);
+    // opn(`http://${host}:${port}` + '/withPupperteer', { app: 'opera' }); // Cambiar browser
 });
