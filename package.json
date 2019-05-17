@@ -9,14 +9,21 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://gitlab.com/PatricioArena/scraping-api-unaj-contacts.git"
   },
+  "keywords": [
+    "example",
+    "heroku"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": ""
   },
-  "homepage": "",
+  "engines": {
+    "node": "10.14.2"
+  },
+  "homepage": "https://scraping-api-unaj-contacts.herokuapp.com/",
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",

@@ -62,7 +62,7 @@ app.get("/withPupperteer", function (req, res) {
 
 app.get("/", function (req, res) {
     withPupperteer().then(function (resultado) {
-        res.status(200).send('<h1> Hello World </h1>');
+        res.status(200).send('<h3> Hello World </h3>');
     });
 });
 
