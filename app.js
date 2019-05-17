@@ -68,6 +68,6 @@ app.get("/", function (req, res) {
 
 app.listen(port, () => {
     // const host = '127.0.0.1';
-    console.log(`Server running on => http://${host}:${port}`);
+    // console.log(`Server running on => http://${host}:${port}`);
     // opn(`http://${host}:${port}` + '/withPupperteer', { app: 'opera' }); // Cambiar browser
 });
