@@ -59,15 +59,9 @@ async function withPupperteer() {
     return collection;
 }
 
-app.get("/withPupperteer", function (req, res) {
-    withPupperteer().then(function (resultado) {
-        res.status(200).send(resultado);
-    });
-});
-
 app.get("/", function (req, res) {
     withPupperteer().then(function (resultado) {
-        res.status(200).send('<h3> Hello World </h3>');
+        res.status(200).send(resultado);
     });
 });
 
