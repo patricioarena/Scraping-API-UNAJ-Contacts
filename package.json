@@ -2,7 +2,10 @@
   "name": "scraping",
   "version": "1.0.0",
   "description": "scraping with puppeteer",
+  "readme": "README.md",
   "main": "app.js",
+  "author": "Patricio Arena",
+  "license": "MIT",
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,20 +18,24 @@
     "scraping",
     "heroku"
   ],
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": ""
-  },
-  "engines": {
-    "node": "v10.14.2",
-    "npm": "6.4.1"
-  },
   "homepage": "https://scraping-api-unaj-contacts.herokuapp.com/",
+  "bugs": "",
+  "contributors": [
+    {
+      "name": "Patricio Arena",
+      "url": ""
+    },
+    "patricio.e.arena@gmail.com"
+  ],
+  "devDependencies": {},
   "dependencies": {
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "puppeteer": "^1.16.0"
+  },
+  "engines": {
+    "node": "v10.14.2",
+    "npm": "6.4.1"
   }
 }
