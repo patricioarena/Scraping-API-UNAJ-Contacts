@@ -67,6 +67,6 @@ app.get("/", function (req, res) {
 app.listen(PORT, () => {
     if (PORT === 3000) {
         console.log(`Server running on => http://localhost:${PORT}`);
-        // opn(`${baseUrl}` + '/', { app: 'opera' }); // Cambiar browser
+        // opn(`http://localhost:${PORT}` + '/', { app: 'opera' }); // Cambiar browser
     }
 });
