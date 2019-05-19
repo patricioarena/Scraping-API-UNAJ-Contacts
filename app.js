@@ -1,4 +1,6 @@
-const port = process.env.PORT || 3000
+const PORT = process.env.PORT || 3000;
+// const HOST = process.env.BASE_URL || 'localhost';
+// const baseUrl = `http://${HOST}:${PORT}`;
 
 const bodyParser = require('body-parser');
 const puppeteer = require('puppeteer');
@@ -65,8 +67,7 @@ app.get("/", function (req, res) {
     });
 });
 
-app.listen(port, () => {
-    // const host = '127.0.0.1';
-    // console.log(`Server running on => http://${host}:${port}`);
-    // opn(`http://${host}:${port}` + '/withPupperteer', { app: 'opera' }); // Cambiar browser
+app.listen(PORT,() => {
+    // console.log(`Server running on => ${baseUrl}`);
+    // opn(`${baseUrl}` + '/', { app: 'opera' }); // Cambiar browser
 });

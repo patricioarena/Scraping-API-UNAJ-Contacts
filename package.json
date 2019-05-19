@@ -1,4 +1,5 @@
 {
+  "private": true,
   "name": "scraping",
   "version": "1.0.0",
   "description": "scraping with puppeteer",
