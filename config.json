@@ -1,0 +1,18 @@
+{
+    "development": {
+        "config_id": "development",
+        "PORT": 3000,
+        "HOST":"localhost"
+
+    },
+    "testing": {
+        "config_id": "testing",
+        "PORT": 3000,
+        "HOST":"localhost"
+    },
+    "production": {
+        "config_id": "production",
+        "PORT": 8080,
+        "HOST":"scraping-api-unaj-contacts.herokuapp.com"
+    }
+}

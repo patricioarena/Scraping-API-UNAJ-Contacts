@@ -1,7 +1,9 @@
-const PORT = process.env.PORT || 3000;
-// const HOST = process.env.BASE_URL || 'localhost';
-// const baseUrl = `http://${HOST}:${PORT}`;
+const config = require("./config.json");
 
+const defaultConfig = config.development;
+const environment = process.env.NODE_ENV || 'development';
+const environmentConfig = config[environment];
+const currentCongif = Object.assign (defaultConfig, environmentConfig);
 const bodyParser = require('body-parser');
 const puppeteer = require('puppeteer');
 const express = require('express');
@@ -67,7 +69,11 @@ app.get("/", function (req, res) {
     });
 });
 
-app.listen(PORT,() => {
-    // console.log(`Server running on => ${baseUrl}`);
+app.listen(currentCongif.PORT, () => {
+    if (currentCongif.HOST === 'localhost') {
+        console.log(`Server running on => http://${currentCongif.HOST}:${currentCongif.PORT}`);
+    } else {
+        console.log(`Server running on => http://${currentCongif.HOST}`);
     // opn(`${baseUrl}` + '/', { app: 'opera' }); // Cambiar browser
+    }
 });
