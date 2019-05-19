@@ -12,7 +12,7 @@
     },
     "production": {
         "config_id": "production",
-        "PORT": 8080,
+        "PORT": 3000,
         "HOST":"scraping-api-unaj-contacts.herokuapp.com"
     }
 }
