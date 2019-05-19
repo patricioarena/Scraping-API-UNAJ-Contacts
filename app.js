@@ -1,9 +1,4 @@
-const config = require("./config.json");
-
-const defaultConfig = config.development;
-const environment = process.env.NODE_ENV || 'development';
-const environmentConfig = config[environment];
-const currentCongif = Object.assign (defaultConfig, environmentConfig);
+const PORT = process.env.PORT || 3000;
 const bodyParser = require('body-parser');
 const puppeteer = require('puppeteer');
 const express = require('express');
@@ -69,9 +64,9 @@ app.get("/", function (req, res) {
     });
 });
 
-app.listen(currentCongif.PORT, () => {
-    if (environment === 'development') {
-        console.log(`Server running on => http://localhost:${currentCongif.PORT}`);
+app.listen(PORT, () => {
+    if (PORT === 3000) {
+        console.log(`Server running on => http://localhost:${PORT}`);
         // opn(`${baseUrl}` + '/', { app: 'opera' }); // Cambiar browser
     }
 });
