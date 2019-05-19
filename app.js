@@ -70,10 +70,8 @@ app.get("/", function (req, res) {
 });
 
 app.listen(currentCongif.PORT, () => {
-    if (currentCongif.HOST === 'localhost') {
-        console.log(`Server running on => http://${currentCongif.HOST}:${currentCongif.PORT}`);
-    } else {
-        console.log(`Server running on => http://${currentCongif.HOST}`);
-    // opn(`${baseUrl}` + '/', { app: 'opera' }); // Cambiar browser
+    if (environment === 'development') {
+        console.log(`Server running on => http://localhost:${currentCongif.PORT}`);
+        // opn(`${baseUrl}` + '/', { app: 'opera' }); // Cambiar browser
     }
 });
